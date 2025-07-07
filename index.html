@@ -22,26 +22,33 @@
 <body>
   <div class="wrapper">
 
-    <header class="navbar" role="banner">
-      <!-- <div class="logo"> -->
-        <!-- <img src="img/frankitlogo.png" alt="Frank IT Solutions logo"> -->
-      <!-- </div> -->
+<header class="navbar" role="banner">
+  <!-- <div class="logo"> -->
+    <!-- <img src="img/frankitlogo.png" alt="Frank IT Solutions logo" /> -->
+  <!-- </div> -->
+  <div class="burger" id="burger" aria-label="Valikon avaus/painike" aria-expanded="false" role="button" tabindex="0">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
-      <nav class="nav-links" role="navigation" aria-label="Päävalikko">
-        <a href="index.html">Etusivu</a>
-        <a href="#palvelut">Ominaisuudet</a>
-        <a href="https://frankit-solutions.com/nettisivut/#hinta-paketit">Hinnoittelu</a>
-        <a href="https://frankit-solutions.com/yhteystiedot/">Yhteystiedot</a>
-      </nav>
+  <!-- Navigaatiolinkit -->
+  <nav class="nav-links" id="navLinks" role="navigation" aria-label="Päävalikko">
+    <a href="index.html">Etusivu</a>
+    <a href="#palvelut">Ominaisuudet</a>
+    <a href="https://frankit-solutions.com/nettisivut/#hinta-paketit">Hinnoittelu</a>
+    <a href="https://frankit-solutions.com/yhteystiedot/">Yhteystiedot</a>
+  </nav>
 
-      <div class="socials" aria-label="Sosiaalisen median linkit">
-        <a href="https://x.com/KAYTTAJANIMESI" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://www.threads.net/@KAYTTAJANIMESI" aria-label="Threads"><i class="bi bi-threads"></i></a>
-        <a href="https://www.linkedin.com/in/KAYTTAJANIMESI" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-      </div>
-    </header>
+  <!-- Some-linkit -->
+  <div class="socials" aria-label="Sosiaalisen median linkit">
+    <a href="https://x.com/KAYTTAJANIMESI"><i class="bi bi-twitter-x"></i></a>
+    <a href="https://www.threads.net/@KAYTTAJANIMESI"><i class="bi bi-threads"></i></a>
+    <a href="https://www.linkedin.com/in/KAYTTAJANIMESI"><i class="bi bi-linkedin"></i></a>
+  </div>
+</header>
 
-    <main class="hero" style="background-image: url('img/herobackground.JPG');" role="main">
+    <main class="hero" style="background-image: url('img/herobackground.jpg');" role="main">
       <div class="hero-content">
         <h1 class="gradient-title">Frank-IT Solutions</h1>
         <p class="subtitle">
@@ -85,7 +92,7 @@
       </article>
     </section>
 
-    <section class="feature-section" style="background-image: url('img/branddesign.JPG');">
+    <section class="feature-section" style="background-image: url('img/branddesign.jpg');">
       <div class="overlay"></div>
 
       <div class="content-wrapper">
@@ -101,9 +108,7 @@
 
         <article class="content-box">
           <h2 class="mt-5">Kuvankäsittely ja Animaatiot</h2>
-          <p class="description">Jokaiselle nettisivulle luodaan brändi-ilmeen kanssa sopivat ja uniikit grafiikat. Visuaalinen siisteys ja uniikki yritysilme takaavat nettisivujen jäävän jokaisen asiakkaan mieleen. Asiakkaan toiveesta taioimme kuvankäsittelytyökalulla nettisivujen grafiikoista juuri hänen näköisensä.
-
-Animaatiot luovat nettisivuille identiteettiä ja auttavat kiinnittämään asiakkaan huomion tärkeimpiin elementteihin. Asiakkaan toiveesta luomme CSS ja Javascript -tekniikoilla brändi-ilmeeseen sopivat animaatiot.</p>
+          <p class="description">Jokaiselle nettisivulle luodaan brändi-ilmeen kanssa sopivat ja uniikit grafiikat. Visuaalinen siisteys ja uniikki yritysilme takaavat nettisivujen jäävän jokaisen asiakkaan mieleen. Asiakkaan toiveesta taioimme kuvankäsittelytyökalulla nettisivujen grafiikoista juuri hänen näköisensä.        Animaatiot luovat nettisivuille identiteettiä ja auttavat kiinnittämään asiakkaan huomion tärkeimpiin elementteihin. Asiakkaan toiveesta luomme CSS ja Javascript -tekniikoilla brändi-ilmeeseen sopivat animaatiot.</p>
           <div class="button-group">
             <a href="#" class="btn outline">Hintapaketit</a>
             <a href="#" class="btn primary">Pyydä Tarjous</a>
@@ -123,5 +128,20 @@ Animaatiot luovat nettisivuille identiteettiä ja auttavat kiinnittämään asia
       </div>
     </footer>
   </div>
+  <script>
+  const burger = document.getElementById('burger');
+  const nav = document.getElementById('navLinks');
+
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('active');
+    nav.classList.toggle('show');
+    burger.setAttribute('aria-expanded', burger.classList.contains('active'));
+  });
+
+  // Paina "Enter" näppäintä näppäimistöllä
+  burger.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') burger.click();
+  });
+</script>
 </body>
 </html>
