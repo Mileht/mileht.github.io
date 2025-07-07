@@ -140,7 +140,7 @@ html, body {
 .gradient-title {
   font-size: 4rem;
   font-weight: 600;
-  background: linear-gradient(90deg, #3fa9f5, #6f9ff5);
+  background: linear-gradient(90deg, #138fe7, #a4c2fa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
